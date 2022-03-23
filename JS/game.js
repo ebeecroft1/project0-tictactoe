@@ -4,6 +4,7 @@
 // Second Working Game Logic (DRY)
 
 const gameBoard = ['', '', '', '', '', '', '', '', ''];
+let gameWon = false;
 
 const winningConditions = [
     [0, 1, 2],
@@ -26,8 +27,17 @@ const winCheck = function () {
             continue;
         }
         if (a === b && b === c) {
-            console.log(a + ' is the winner!')
+            gameWon = true;
+            $('.winner').css('visibility', 'visible');
+            $('button').attr('disabled', true);
         }
+    }
+}
+
+const drawCheck = function () {
+    if (!gameBoard.includes('')) {
+        $('.winner').css('visibility', 'visible');
+        $('.winner').text('A draw! You are both as smart as each other.');
     }
 }
 
