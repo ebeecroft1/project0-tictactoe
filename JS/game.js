@@ -36,9 +36,10 @@ const winCheck = function () {
 }
 
 const drawCheck = function () {
-    if (!gameBoard.includes('')) {
+    if (!gameBoard.includes('') && (gameWon = false) ) {
         $('.winner').css('visibility', 'visible');
-        $('.winner').text('A draw! You are both as smart as each other.');
+        $('.whoWon').addClass('draw');
+        $('.whoWon').text('A draw! You are both as smart as each other.');
     }
 }
 

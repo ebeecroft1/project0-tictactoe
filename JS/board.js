@@ -77,5 +77,6 @@ $('.reset').on('click', function () { // Click reset button function
     $('.tile').text(''); // Reset game tile text
     $('.tile').removeClass('x'); // Remove 'x' class on game tiles
     $('.tile').removeClass('o'); // Remove 'o' class on game tiles
+    $('.whoWon').removeClass('draw'); // Reset draw winner window formatting
     $('.winner').css('visibility', 'hidden'); // Hide winner window
 });

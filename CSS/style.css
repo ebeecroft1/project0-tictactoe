@@ -1,10 +1,4 @@
-/* TO DOS */
-/* Animate click function */
 
-/* * {
-    box-sizing: border-box;
-    border: solid 1px red;
-} */
 
 body {
     background-color: #DDDDDA;
@@ -77,9 +71,9 @@ h2 {
 }
 
 .tile {
-    /* border: 1px;
+    border: 1px;
     border-style: solid;
-    border-color: #4A707A; */
+    border-color: #4A707A;
     background-color: #7697A0;
     display: inline-block;
     width: 134px;
@@ -102,20 +96,21 @@ h2 {
 }
 
 .winner {
-    position: fixed;
-    top: 34%;
-    left: 25%;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto;
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
     padding: 1em;
     width: 300px;
-    height: 150px;
+    height: 200px;
     visibility: hidden;
     background-color: #C2C8C5;
     opacity: 85%;
     font-size: 30px;
     border-radius: 5px;
+}
+
+.draw {
+    margin: 0 auto;
 }
 
 .reset {
