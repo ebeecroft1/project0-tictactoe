@@ -1,7 +1,8 @@
-//TO DOS
-// Define win condition & write function to check for it
+// Welcome to Tic Tac Toe Game Logic
 
-// Second Working Game Logic (DRY)
+// We can serve Game Logic in two ways:
+// 1: DRY, which is the chefs preference. See if you can taste the tears that went into this.
+// 2: WET, for those who prefer a crunchy texture. Notes of vanilla and youthful simplicity compliment the very long finish.
 
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameWon = false;
@@ -41,7 +42,6 @@ const drawCheck = function () {
     }
 }
 
-// First Working Game Logic
 // const winCheck = function () { // Check if any win conditions are met
 //     if ($('.top').hasClass('x') || $('.top').hasClass('o')) { // If top is all filled - check for top win
 //         topWin($('.top.left').text(), $('.top.center').text(), $('.top.right').text());
