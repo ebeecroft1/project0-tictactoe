@@ -3,7 +3,7 @@
 
 // Second Working Game Logic (DRY)
 
-const gameBoard = ['', '', '', '', '', '', '', '', ''];
+let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameWon = false;
 
 const winningConditions = [
@@ -29,7 +29,7 @@ const winCheck = function () {
         if (a === b && b === c) {
             gameWon = true;
             $('.winner').css('visibility', 'visible');
-            $('button').attr('disabled', true);
+            $('.tile').attr('disabled', true);
         }
     }
 }

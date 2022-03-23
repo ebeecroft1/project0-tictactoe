@@ -20,9 +20,9 @@ body {
 
 h1 {
     text-align: center;
-    color: #4A707A;
+    color: #94B0B7;
     font-weight: bold;
-    font-size: 6em;
+    font-size: 5em;
     margin: 5px;
 }
 
@@ -60,6 +60,9 @@ h2 {
 
 .title {
     padding: 5px;
+    background-color: #DDDDDA;
+    border-radius: 10px;
+    /* width: 500px; Fix this width */
 }
 
 .board {
@@ -73,10 +76,10 @@ h2 {
     row-gap: 5px;
 }
 
-button {
-    border: 1px;
+.tile {
+    /* border: 1px;
     border-style: solid;
-    border-color: #4A707A;
+    border-color: #4A707A; */
     background-color: #7697A0;
     display: inline-block;
     width: 134px;
@@ -109,10 +112,18 @@ button {
     width: 300px;
     height: 150px;
     visibility: hidden;
-    background-color: white;
+    background-color: #C2C8C5;
     opacity: 85%;
     font-size: 30px;
     border-radius: 5px;
+}
+
+.reset {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+    vertical-align: bottom;
 }
 
 .off {

@@ -3,8 +3,10 @@
 // Switch turns - Done
 // Disable button/div after it has been filled - Done
 // Display winner - Done
-// Reset button
+// Reset button - Done
 // Win counter
+// Change font in buttons & title
+// Title banner = page width
 
 let turnCounter = 1;
 
@@ -21,19 +23,20 @@ const playerSwitch2 = function() {
     $('.player1').addClass('animate__pulse');
 };
 
-$('button').on('click', function () {
+$('.tile').on('click', function () {
     if (turnCounter %2 !== 0) {
         $(this).text('X');
         $(this).addClass('x');
         $(this).attr('disabled', true);
 
-        xIndex = $('button').index(this)
+        xIndex = $('.tile').index(this)
         gameBoard[xIndex] = 'X';
 
         winCheck();
         if (gameWon === true) {
-            $('.winner').text('X is the winner!');
-            // $('.player1').text('I'); // Can't get this counter to work
+            $('.whoWon').text('X is the winner!');
+            xPlayerScore++
+            $('.xScore').text(`X = ${xPlayerScore}`);
             // $(this).removeClass('animate__pulse'); // Can't get this cancel to work
         };
 
@@ -48,12 +51,14 @@ $('button').on('click', function () {
         $(this).addClass('o');
         $(this).attr('disabled', true);
 
-        oIndex = $('button').index(this)
+        oIndex = $('.tile').index(this)
         gameBoard[oIndex] = 'O';
     
         winCheck();
         if (gameWon === true) {
-            $('.winner').text('O is the winner!');
+            $('.whoWon').text('O is the winner!');
+            oPlayerScore++
+            $('.oScore').text(`O = ${oPlayerScore}`);
             // $(this).removeClass('animate__pulse'); // Can't get this cancel to work
         };
 
@@ -63,4 +68,14 @@ $('button').on('click', function () {
         playerSwitch2();
 
     }
+});
+
+$('.reset').on('click', function () { // Click reset button function
+    gameBoard = ['', '', '', '', '', '', '', '', '']; // Reset gameBoard array with empty values
+    gameWon = false; // Set game state to active
+    $('.tile').attr('disabled', false); // Re-enable each game tile
+    $('.tile').text(''); // Reset game tile text
+    $('.tile').removeClass('x'); // Remove 'x' class on game tiles
+    $('.tile').removeClass('o'); // Remove 'o' class on game tiles
+    $('.winner').css('visibility', 'hidden'); // Hide winner window
 });
