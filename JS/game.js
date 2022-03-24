@@ -4,6 +4,8 @@
 // 1: DRY, which is the chefs preference. See if you can taste the tears that went into this.
 // 2: WET, for those who prefer a crunchy texture. Notes of vanilla and youthful simplicity compliment the very long finish.
 
+// 1: DRY Game Logic 
+
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameWon = false;
 
@@ -42,6 +44,32 @@ const drawCheck = function () {
         $('.whoWon').text('A draw! You are both as smart as each other.');
     }
 }
+
+const hatTrick = (function () {
+    let triggered = false;
+    return function() {
+        if (!triggered) {
+            if (xPlayerScore === 3 || oPlayerScore === 3) {
+                triggered = true;
+                $('.hatTrick')[0].play();
+            }
+        }
+    }
+}) ();
+
+const embarrassing = (function () {
+    let triggered = false;
+    return function() {
+        if (!triggered) {
+            if (xPlayerScore - oPlayerScore === 4 || oPlayerScore - xPlayerScore === 4 ) {
+                triggered = true;
+                $('.embarrassing')[0].play();
+            }
+        }
+    }
+}) ();
+
+// 2: WET Game Logic
 
 // const winCheck = function () { // Check if any win conditions are met
 //     if ($('.top').hasClass('x') || $('.top').hasClass('o')) { // If top is all filled - check for top win

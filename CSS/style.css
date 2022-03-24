@@ -1,5 +1,4 @@
 
-
 body {
     background-color: #DDDDDA;
     font-family: 'Rubik', sans-serif;
@@ -17,9 +16,14 @@ h1 {
     color: #94B0B7;
     text-shadow: 2px 2px #4A707A;
     font-weight: bold;
-    font-size: 5em;
+    font-size: 6em;
     margin: 10px;
     padding: 5px;
+}
+.title {
+    padding: 5px;
+    background-color: #DDDDDA;
+    border-radius: 10px;
 }
 
 h2 {
@@ -54,13 +58,6 @@ h2 {
     animation-iteration-count: infinite;
 }
 
-.title {
-    padding: 5px;
-    background-color: #DDDDDA;
-    border-radius: 10px;
-    /* width: 500px; Fix this width */
-}
-
 .board {
     width: 425px;
     height: 425px;
@@ -85,6 +82,7 @@ h2 {
     text-align: center;
     position: relative;
     border-radius: 15px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .x {
@@ -121,6 +119,7 @@ h2 {
     margin: 5px;
     position: relative;
     vertical-align: bottom;
+    font-family: 'Rubik', sans-serif;
 }
 
 .off {

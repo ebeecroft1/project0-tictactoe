@@ -37,10 +37,11 @@ $('.tile').on('click', function () {
             $('.whoWon').text('X is the winner!');
             xPlayerScore++
             $('.xScore').text(`X = ${xPlayerScore}`);
-            // $(this).removeClass('animate__pulse'); // Can't get this cancel to work
         };
 
         drawCheck();
+        hatTrick();
+        embarrassing();
 
         turnCounter++;
         playerSwitch1();
@@ -59,10 +60,11 @@ $('.tile').on('click', function () {
             $('.whoWon').text('O is the winner!');
             oPlayerScore++
             $('.oScore').text(`O = ${oPlayerScore}`);
-            // $(this).removeClass('animate__pulse'); // Can't get this cancel to work
         };
 
         drawCheck();
+        hatTrick();
+        embarrassing();
 
         turnCounter++;
         playerSwitch2();
