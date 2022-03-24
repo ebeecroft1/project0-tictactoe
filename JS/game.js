@@ -6,10 +6,10 @@
 
 // 1: DRY Game Logic 
 
-let gameBoard = ['', '', '', '', '', '', '', '', ''];
-let gameWon = false;
+let gameBoard = ['', '', '', '', '', '', '', '', '']; // Set empty game board array
+let gameWon = false; // Set game state to active
 
-const winningConditions = [
+const winningConditions = [ // Set possible winning combinations
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -20,50 +20,50 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
-const winCheck = function () {
-    for (let i = 0; i <= 7; i++) {
-        const winCondition = winningConditions[i];
+const winCheck = function () { // Function to check if the game has been won
+    for (let i = 0; i <= 7; i++) { // Open for loop
+        const winCondition = winningConditions[i]; // Bind winning conditions array with current gameboard array
         const a = gameBoard[winCondition[0]];
         const b = gameBoard[winCondition[1]];
         const c = gameBoard[winCondition[2]];
-        if (a === "" || b === "" || c === "") {
+        if (a === "" || b === "" || c === "") { // Set loop to iterate past empty indexes
             continue;
         }
-        if (a === b && b === c) {
-            gameWon = true;
-            $('.winner').css('visibility', 'visible');
-            $('.tile').attr('disabled', true);
+        if (a === b && b === c) { // Check if any of the winning combos have been met
+            gameWon = true; // Set game state to won
+            $('.winner').css('visibility', 'visible'); // Reveal winner window
+            $('.tile').attr('disabled', true); // Disable game tiles
         }
     }
 }
 
-const drawCheck = function () {
-    if ( !gameBoard.includes('') && gameWon === false ) {
-        $('.winner').css('visibility', 'visible');
-        $('.whoWon').addClass('draw');
-        $('.whoWon').text('A draw! You are both as smart as each other.');
+const drawCheck = function () { // Function to check for a draw
+    if ( !gameBoard.includes('') && gameWon === false ) { // Check that all game board is full & game has not been won. If both are true, then the game is a tie
+        $('.winner').css('visibility', 'visible'); // Reveal winner window
+        $('.whoWon').addClass('draw'); // Employ draw result window formatting
+        $('.whoWon').text('A draw! You are both as smart as each other.'); // Present draw result
     }
 }
 
-const hatTrick = (function () {
-    let triggered = false;
+const hatTrick = (function () { // FUNction to check if a player has scored a hat trick (3 games)
+    let triggered = false; // Variable to guard function from being triggered more than once
     return function() {
-        if (!triggered) {
-            if (xPlayerScore === 3 || oPlayerScore === 3) {
-                triggered = true;
-                $('.hatTrick')[0].play();
+        if (!triggered) { // Check if function has not been triggered
+            if (xPlayerScore === 3 || oPlayerScore === 3) { // Check if either player has won 3 games
+                triggered = true; // Change triggered to true to prevent audio playing repeatedly
+                $('.hatTrick')[0].play(); // Play fun hat trick audio
             }
         }
     }
 }) ();
 
-const embarrassing = (function () {
-    let triggered = false;
+const embarrassing = (function () { // FUNction to check if a player is winning by 4 games
+    let triggered = false; // Variable to guard function from being triggered more than once
     return function() {
-        if (!triggered) {
-            if (xPlayerScore - oPlayerScore === 4 || oPlayerScore - xPlayerScore === 4 ) {
-                triggered = true;
-                $('.embarrassing')[0].play();
+        if (!triggered) { // Check if function has not been triggered
+            if (xPlayerScore - oPlayerScore === 4 || oPlayerScore - xPlayerScore === 4 ) { // Check if either player is ahead by 4 games
+                triggered = true; // Change triggered to true to prevent audio playing repeatedly
+                $('.embarrassing')[0].play(); // Play fun embarrassing audio
             }
         }
     }

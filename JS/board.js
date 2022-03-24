@@ -1,73 +1,67 @@
-//TO DOS
-// Present which players turn it is - Done
-// Switch turns - Done
-// Disable button/div after it has been filled - Done
-// Display winner - Done
-// Reset button - Done
-// Win counter
-// Change font in buttons & title
-// Title banner = page width
+// Welcome to the Tic Tac Toe Board Logic
 
-let turnCounter = 1;
+// This is primarily where the Game Logic interacts with the Board aka the DOM
 
-let xPlayerScore = 0;
-let oPlayerScore = 0;
+let turnCounter = 1; // Set turn counter so the game knows who's turn it is
 
-const playerSwitch1 = function() {
-    $('.player1').removeClass('animate__pulse');
-    $('.player2').addClass('animate__pulse');
+let xPlayerScore = 0; // Set Player X score to 0
+let oPlayerScore = 0; // Set Player O score to 0
+
+const playerSwitch1 = function() { // Function to switch animation from Player X to Player O
+    $('.player1').removeClass('animate__pulse'); // Deactivate animation on Player x
+    $('.player2').addClass('animate__pulse'); // Activate animation on Player O
 };
 
-const playerSwitch2 = function() {
-    $('.player2').removeClass('animate__pulse');
-    $('.player1').addClass('animate__pulse');
+const playerSwitch2 = function() { // Function to switch animation from Player O to Player X
+    $('.player2').removeClass('animate__pulse'); // Deactivate animation on Player O
+    $('.player1').addClass('animate__pulse'); // Activate animation on Player X
 };
 
-$('.tile').on('click', function () {
-    if (turnCounter %2 !== 0) {
-        $(this).text('X');
-        $(this).addClass('x');
-        $(this).attr('disabled', true);
+$('.tile').on('click', function () { // The big on click function that brings it all together
+    if (turnCounter %2 !== 0) { // Check if it is Player X's turn
+        $(this).text('X'); // Add 'X' to the selected game tile text
+        $(this).addClass('x'); // Add 'X' class to the selected game tile HTML
+        $(this).attr('disabled', true); // Disable the selected game tile
 
-        xIndex = $('.tile').index(this)
-        gameBoard[xIndex] = 'X';
+        let xIndex = $('.tile').index(this) // Store the selected game tile index as the variable xIndex
+        gameBoard[xIndex] = 'X'; // Claim the xIndex index in the game board array for Player X
 
-        winCheck();
-        if (gameWon === true) {
-            $('.whoWon').text('X is the winner!');
-            xPlayerScore++
-            $('.xScore').text(`X = ${xPlayerScore}`);
+        winCheck(); // Check if win conditions have been met by this click
+        if (gameWon === true) { // If game has been won
+            $('.whoWon').text('X is the winner!'); // Change winner window text to display Player X
+            xPlayerScore++ // Add one to the Player X score
+            $('.xScore').text(`X = ${xPlayerScore}`); // Update Player X's score in the lower window
         };
 
-        drawCheck();
-        hatTrick();
-        embarrassing();
+        drawCheck(); // Check if the game has ended in a draw
+        hatTrick(); // Check if Player X has scored a hat trick
+        embarrassing(); // Check if one player is losing by 4
 
-        turnCounter++;
-        playerSwitch1();
+        turnCounter++; // Increase the turn counter by one
+        playerSwitch1(); // Switch to Player O
 
     }
-    else {
-        $(this).text('O');
-        $(this).addClass('o');
-        $(this).attr('disabled', true);
+    else { // If it is not Player X's turn - it must be Player O's
+        $(this).text('O'); // Add 'O' to the selected game tile text
+        $(this).addClass('o'); // Add 'O' class to the selected game tile HTML
+        $(this).attr('disabled', true); // Disable the selected game tile
 
-        oIndex = $('.tile').index(this)
-        gameBoard[oIndex] = 'O';
+        let oIndex = $('.tile').index(this) // Store the selected game tile index as the variable xIndex
+        gameBoard[oIndex] = 'O'; // Claim the xIndex index in the game board array for Player X
     
-        winCheck();
-        if (gameWon === true) {
-            $('.whoWon').text('O is the winner!');
-            oPlayerScore++
-            $('.oScore').text(`O = ${oPlayerScore}`);
+        winCheck(); // Check if win conditions have been met by this click
+        if (gameWon === true) { // If game has been won
+            $('.whoWon').text('O is the winner!'); // Change winner window text to display Player O
+            oPlayerScore++ // Add one to the Player O score
+            $('.oScore').text(`O = ${oPlayerScore}`); // Update Player O's score in the lower window
         };
 
-        drawCheck();
-        hatTrick();
-        embarrassing();
+        drawCheck(); // Check if the game has ended in a draw
+        hatTrick(); // Check if Player O has scored a hat trick
+        embarrassing(); // Check if one player is losing by 4
 
-        turnCounter++;
-        playerSwitch2();
+        turnCounter++; // Increase the turn counter by one
+        playerSwitch2(); // Switch to Player X
 
     }
 });
