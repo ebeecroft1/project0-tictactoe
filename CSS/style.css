@@ -2,7 +2,7 @@
 
 body {
     background-color: #DDDDDA;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .container {
@@ -15,9 +15,11 @@ body {
 h1 {
     text-align: center;
     color: #94B0B7;
+    text-shadow: 2px 2px #4A707A;
     font-weight: bold;
     font-size: 5em;
-    margin: 5px;
+    margin: 10px;
+    padding: 5px;
 }
 
 h2 {

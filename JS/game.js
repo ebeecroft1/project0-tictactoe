@@ -36,7 +36,7 @@ const winCheck = function () {
 }
 
 const drawCheck = function () {
-    if (!gameBoard.includes('') && (gameWon = false) ) {
+    if ( !gameBoard.includes('') && gameWon === false ) {
         $('.winner').css('visibility', 'visible');
         $('.whoWon').addClass('draw');
         $('.whoWon').text('A draw! You are both as smart as each other.');
