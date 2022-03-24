@@ -1,6 +1,8 @@
 // Welcome to the Tic Tac Toe Board Logic
 
-// This is primarily where the Game Logic interacts with the Board aka the DOM
+// This is primarily* where the Game Logic interacts with the Board aka the DOM
+
+// * I say primarily as I couldn't help but sneak some DOM manipulation into the Game Logic file. Please don't judge me harshly.
 
 let turnCounter = 1; // Set turn counter so the game knows who's turn it is
 
