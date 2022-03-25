@@ -120,6 +120,10 @@ h2 {
     height: 50px;
     margin: 5px;
     position: relative;
+    border: 1px;
+    border-style: solid;
+    border-color: #4A707A;
+    border-radius: 15px;
     vertical-align: bottom;
     font-family: 'Rubik', sans-serif;
 }
