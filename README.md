@@ -4,6 +4,8 @@ This is the first project I completed during my Software Engineering Immmersive 
 
 The project deliverable was to render a game board in the browser with a fully functioning game of Tic Tac Toe which would switch turns between X and O as well as visually display the result of a game.
 
+[Play Tic Tac Toe](https://ebeecroft1.github.io/project0-tictactoe/)
+
 ### Skills Tested
 - HTML
 - CSS
@@ -67,3 +69,4 @@ Bugs I still have
 - Correct responsive web design
 - Proper positioning on the end game modal
 - Disabling the bounce animation once the game is won
+- Hover animation on tiles
