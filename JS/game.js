@@ -35,7 +35,7 @@ const winCheck = function () {
             $('.tile').attr('disabled', true); // Disable game tiles
         }
     }
-}
+};
 
 const drawCheck = function () {
     if ( !gameBoard.includes('') && gameWon === false ) { // Check that all game tiles have been selected & game has not been won.
@@ -43,7 +43,7 @@ const drawCheck = function () {
         $('.whoWon').addClass('draw');
         $('.whoWon').text('A draw! You are both as smart as each other.'); // Present draw result
     }
-}
+};
 
 const hatTrick = (function () { // FUNction to check if a player has scored a hat trick (3 games)
     let triggered = false; // Variable to guard function from being triggered more than once
